@@ -5,7 +5,7 @@ import json
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print(device)
 
-option = 'hindi'
+option = 'malayalam'
 
 if option == 'english':
     uc_group = ['brahmin', 'kshatriya', 'vaisya', 'priest', 'merchant', 'landlord', 'savarna', 'upper']
@@ -59,7 +59,7 @@ elif option == 'malayalam':
 
 all_words = uc_group + lc_group + good_adjectives + bad_adjectives
 
-def get_model_embedding(all_words, tokenizer, model):
+def get_model_embedding(all_words, tokenizer, model, device):
     with torch.no_grad():
         inputs = tokenizer(all_words, padding=True, truncation=True, return_tensors="pt").to(device)
         outputs = model(**inputs)
@@ -71,6 +71,9 @@ all_models = ["Linq-AI-Research/Linq-Embed-Mistral", "Alibaba-NLP/gte-Qwen2-7B-i
                    "intfloat/multilingual-e5-large-instruct", "Salesforce/SFR-Embedding-Mistral"]
 
 for model_name in all_models:
+
+    if model_name in ["Linq-AI-Research/Linq-Embed-Mistral", "Alibaba-NLP/gte-Qwen2-7B-instruct"]:
+        continue
 
     try:
         model = AutoModel.from_pretrained(model_name, device_map="auto", offload_buffers=True)
@@ -91,7 +94,7 @@ for model_name in all_models:
     except FileNotFoundError:
         embeddings = {}
     
-    all_embeddings = get_model_embedding(all_words, tokenizer, model)
+    all_embeddings = get_model_embedding(all_words, tokenizer, model, device)
 
     for (i, embedding) in enumerate(all_embeddings):
         embeddings[all_words[i]] = embedding

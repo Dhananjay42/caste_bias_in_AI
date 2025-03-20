@@ -111,7 +111,7 @@ def json_pipeline(good_adjectives, bad_adjectives, uc_group, lc_group, file_name
 
     return weat_score
 
-option = 'hindi'
+option = 'malayalam'
         
 if option == 'english':
     uc_group = ['brahmin', 'kshatriya', 'vaisya', 'priest', 'merchant', 'landlord', 'savarna', 'upper']
