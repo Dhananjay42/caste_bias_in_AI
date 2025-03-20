@@ -165,11 +165,11 @@ elif option == 'malayalam':
 models = [
     ("indic-bert", bert_pipeline, None),
     ("muril", muril_pipeline, None),
-    #("gemini-embedding-exp-03-07", json_pipeline, "gemini_embeddings.json"),
-    ("linq-embed-mistral", json_pipeline, "linq-embed-mistral_embeddings.json"),
-    ("gte-qwen2-7b-instruct", json_pipeline, "gte-qwen2-7b-instruct_embeddings.json"),
-    ("multilingual-e5-large-instruct", json_pipeline, "multilingual-e5-large-instruct_embeddings.json"),
-    ("sfr-embedding-mistral", json_pipeline, "sfr-embedding-mistral_embeddings.json"),
+    #("gemini-embedding-exp-03-07", json_pipeline, "data/gemini_embeddings.json"),
+    ("linq-embed-mistral", json_pipeline, "data/linq-embed-mistral_embeddings.json"),
+    ("gte-qwen2-7b-instruct", json_pipeline, "data/gte-qwen2-7b-instruct_embeddings.json"),
+    ("multilingual-e5-large-instruct", json_pipeline, "data/multilingual-e5-large-instruct_embeddings.json"),
+    ("sfr-embedding-mistral", json_pipeline, "data/sfr-embedding-mistral_embeddings.json"),
 ]
 
 

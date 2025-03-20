@@ -89,7 +89,7 @@ for model_name in all_models:
     file_name = file_name.lower() 
 
     try:
-        with open(f"{file_name}_embeddings.json", 'r') as f:
+        with open(f"data/{file_name}_embeddings.json", 'r') as f:
             embeddings = json.load(f)
     except FileNotFoundError:
         embeddings = {}
