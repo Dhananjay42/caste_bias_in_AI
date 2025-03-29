@@ -4,7 +4,9 @@ import matplotlib.pyplot as plt
 from scipy.stats import norm
 
 # Load JSON data
-with open("data/results_partial.json", "r", encoding="utf-8") as file:
+model = "gpt-4o"
+
+with open("data/results_{model}_full.json", "r", encoding="utf-8") as file:
     data = json.load(file)
 
 # Extract ratings based on caste
