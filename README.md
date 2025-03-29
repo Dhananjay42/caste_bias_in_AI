@@ -31,11 +31,23 @@ You might need to use the above script multiple times due to API time-out issues
 Once you have these set of embeddings, you can obtain the WEAT score results using:
 
 ```
-python set_weat_scores.py
+python get_weat_scores.py
 ```
-## 3. Generating the synthetic data
+## 3. Examining Caste-Bias in LLM used for Hiring
 
+First, you create the synthetic cover letter dataset using the following command. This dataset is obtained by using https://huggingface.co/datasets/ShashiVish/cover-letter-dataset as a starting point!
 
+```
+python create_job_dataset.py
+```
+Once this is done, you can obtain the LLM decisions, written into the `data/` subfolder, by using:
+```
+python get_LLM_hiring_results.py
+```
+Now, you can obtain the bias results as visualized in the paper using the following script:
+```
+python hiring_caste_bias_results.py
+```
 
 
 
