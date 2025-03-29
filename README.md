@@ -27,6 +27,7 @@ For obtaining the embeddings using the gemini model (which is only available as 
 python save_gemini_embeddings.py
 ```
 You might need to use the above script multiple times due to API time-out issues. This can be automated using a shell-script that executes this script periodically with time-gaps for a set duration of time. At least, that is what I did. 
+The embeddings are saved in the the `data/` subfolder as JSON files. 
 
 Once you have these set of embeddings, you can obtain the WEAT score results using:
 
