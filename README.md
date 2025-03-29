@@ -41,7 +41,7 @@ First, you create the synthetic cover letter dataset using the following command
 ```
 python create_job_dataset.py
 ```
-Once this is done, you can obtain the LLM decisions, written into the `data/` subfolder, by using:
+Once this is done, you can obtain the LLM decisions, which uses the GPT-4o model, written into the `data/` subfolder, by using:
 ```
 python get_LLM_hiring_results.py
 ```
